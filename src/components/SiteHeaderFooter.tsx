@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import { BookOpen, Layers } from 'lucide-react'
-import { ThemeToggle } from '@/components/ThemeToggle'
+import { ThemeMenu } from '@/components/ThemeMenu'
+import { LogoMark } from '@/components/LogoMark'
 import { cn } from '@/lib/utils'
 
 const NAV_ITEMS = [
@@ -13,9 +14,7 @@ export function SiteHeader() {
     <header className="border-border/80 bg-background/85 sticky top-0 z-40 border-b backdrop-blur">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link to="/" className="flex items-center gap-2.5" aria-label="Muazpedia home">
-          <span className="bg-primary text-primary-foreground flex size-7 items-center justify-center rounded-md font-serif text-sm font-bold">
-            M
-          </span>
+          <LogoMark className="size-7 rounded-md" />
           <span className="text-[15px] font-semibold tracking-tight">muazpedia</span>
         </Link>
         <nav className="flex items-center gap-1" aria-label="Main navigation">
@@ -37,7 +36,7 @@ export function SiteHeader() {
               <span className="hidden sm:inline">{label}</span>
             </NavLink>
           ))}
-          <ThemeToggle />
+          <ThemeMenu />
         </nav>
       </div>
     </header>

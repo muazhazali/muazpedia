@@ -29,7 +29,7 @@ export function HomePage() {
       {/* hero */}
       <section className="max-w-2xl">
         <p className="text-primary font-mono text-[11px] font-medium tracking-widest uppercase">
-          ConceptLab · Muazpedia
+          Muazpedia
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
           Your learning library
@@ -60,7 +60,7 @@ export function HomePage() {
                 </div>
               </div>
               <span className="text-primary inline-flex items-center gap-1.5 text-sm font-medium">
-                {lessonProgressLabel(attentionProgress) === 'Completed' ? 'Revisit lesson' : 'Open lesson'}
+                {attentionProgress?.visitedAt ? 'Revisit lesson' : 'Open lesson'}
                 <ArrowRight className="size-4" />
               </span>
             </Card>
@@ -161,8 +161,8 @@ export function HomePage() {
   )
 }
 
-function lessonProgressLabel(p?: { visitedAt?: number; completed?: boolean }): string {
-  if (p?.completed) return 'Completed'
+function lessonProgressLabel(p?: { visitedAt?: number; quiz?: unknown }): string {
+  if (p?.quiz) return 'Reviewed'
   if (p?.visitedAt) return 'In progress'
   return 'New'
 }

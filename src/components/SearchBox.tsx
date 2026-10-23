@@ -45,6 +45,7 @@ export function SearchBox() {
       <Search className="text-muted-foreground pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2" />
       <Input
         type="text"
+        name="library-search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search topics and concepts…"

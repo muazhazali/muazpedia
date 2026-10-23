@@ -3,15 +3,13 @@ import { Badge } from '@/components/ui/badge'
 import { Link } from 'react-router-dom'
 import type { Lesson } from '@/data/lessons'
 import { topicForLesson } from '@/data/lessons'
-import type { LessonProgress } from '@/lib/progress'
 
 export interface LessonLayoutProps {
   lesson: Lesson
-  progress?: LessonProgress
   children: React.ReactNode
 }
 
-export function LessonLayout({ lesson, progress, children }: LessonLayoutProps) {
+export function LessonLayout({ lesson, children }: LessonLayoutProps) {
   const topic = topicForLesson(lesson)
 
   return (
@@ -44,11 +42,6 @@ export function LessonLayout({ lesson, progress, children }: LessonLayoutProps) 
               {tag}
             </Badge>
           ))}
-          {progress?.completed && (
-            <Badge variant="accent" className="gap-1">
-              ✓ completed
-            </Badge>
-          )}
         </div>
         <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{lesson.title}</h1>
         <p className="text-muted-foreground mt-2 text-base">{lesson.subtitle}</p>

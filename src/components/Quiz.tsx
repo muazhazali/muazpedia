@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { CheckCircle2, ChevronRight, RotateCcw, XCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { recordQuizResult } from '@/lib/progress'
@@ -61,11 +60,6 @@ export function Quiz({ lessonId, questions, title = 'Check yourself' }: QuizProp
             ? 'Solid recall — revisit the flashcards in a few days to keep it fresh.'
             : 'Close to it. Re-read the summary above and try again — repetition is the point.'}
         </p>
-        {passed ? (
-          <Badge variant="accent" className="mt-3">
-            Lesson completed ✓
-          </Badge>
-        ) : null}
         <Button variant="outline" size="sm" onClick={retry} className="mt-4">
           <RotateCcw /> Try again
         </Button>

@@ -22,7 +22,6 @@
   --success: oklch(0.55 0.12 150);
   --border: oklch(0.905 0.008 205);
   --input: oklch(0.905 0.008 205);
-  --ring: oklch(0.6 0.09 190);
   --radius: 0.5rem;
 }
 
@@ -39,14 +38,20 @@
   --secondary-foreground: oklch(0.9 0.01 200);
   --muted: oklch(0.28 0.02 238);
   --muted-foreground: oklch(0.7 0.015 215);
-  --accent: oklch(0.31 0.04 200);
-  --accent-foreground: oklch(0.9 0.02 190);
   --destructive: oklch(0.62 0.18 25);
   --destructive-foreground: oklch(0.15 0.02 25);
   --success: oklch(0.7 0.12 152);
   --border: oklch(0.33 0.02 238);
   --input: oklch(0.36 0.02 238);
-  --ring: oklch(0.55 0.09 190);
+}
+
+/* Accent, accent text and focus ring derive from --primary so custom
+   accent colors flow through automatically. */
+:root,
+.dark {
+  --accent: color-mix(in oklab, var(--primary) 12%, var(--background));
+  --accent-foreground: color-mix(in oklab, var(--primary) 90%, var(--foreground));
+  --ring: color-mix(in oklab, var(--primary) 75%, transparent);
 }
 
 @theme inline {
@@ -70,7 +75,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "IBM Plex Sans Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -92,7 +97,8 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-feature-settings: "cv05" 1;
+    /* tabular figures: digits align in columns everywhere */
+    font-variant-numeric: tabular-nums;
   }
   ::selection {
     @apply bg-accent text-accent-foreground;
