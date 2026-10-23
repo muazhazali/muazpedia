@@ -1,0 +1,49 @@
+import { AttentionVisualizer } from '@/visualizations/AttentionVisualizer'
+import { ATTENTION_QUIZ as quizAttention } from '@/data/quizzes'
+
+## Overview
+
+Attention is the mechanism that lets a language model decide, for every token, **which earlier tokens matter most** when building its representation. Instead of blending all previous words equally, each token sends a *query*, compares it against the *keys* of the tokens it is allowed to look at, and pulls in a weighted mix of their *values*.
+
+<Formula
+  tex={'\\text{Attention}(Q,K,V) = \\text{softmax}\\!\\left(\\dfrac{QK^{T}}{\\sqrt{d_k}}\\right)V'}
+  block={true}
+/>
+
+In the demo below, three tokens — **The**, **cat**, **sleeps** — each carry a small query, key and value vector (d<sub>k</sub> = 4). Walk through the four stages to see exactly how attention turns scores into a weighted mixture, and open the vector editor to change any number.
+
+## Visualize and experiment
+
+Everything you change on the left is recomputed live: dot products, the scaling by <Formula tex="\sqrt{d_k}" inline />, softmax weights and the final output — the diagram and the numbers always agree. Try selecting a different query token to watch the causal mask change what it can see.
+
+<AttentionVisualizer />
+
+## Remember
+
+- **Query (Q)** — what am I looking for?
+- **Key (K)** — how well does each token match my query?
+- **Value (V)** — what information is actually retrieved and combined?
+- Raw scores are divided by <Formula tex="\sqrt{d_k}" inline /> so softmax never saturates as dimensions grow.
+- **Causal masking** forces weight 0 for any token *after* the query — a decoder-only model cannot peek at the future.
+
+## Check yourself
+
+Three quick questions. Answering at least two correctly marks the lesson as completed.
+
+<Quiz lessonId="attention" questions={quizAttention} />
+
+## Summary
+
+Attention turns reading into a soft, differentiable lookup: **scores → weights → weighted sum of values**. Every transformer layer repeats this in parallel across many heads; multi-head attention just does it several times with different learned Q/K/V projections.
+
+<Flashcard
+  cardId={'fc-formula-attention'}
+  front={'Attention in one line?'}
+  back={'softmax(Q Kᵀ / √d_k) · V — match queries to keys, normalize the scores, mix the values.'}
+/>
+
+<Flashcard
+  cardId={'fc-q-k-v-roles'}
+  front={'Roles of Q, K, V in a sentence?'}
+  back={'Q: what am I looking for? K: what matches my query? V: what information gets pulled in.'}
+/>

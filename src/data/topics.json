@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "id": "machine-learning",
+      "name": "Machine Learning",
+      "blurb": "How models learn from data: regressions, optimization, networks.",
+      "icon": "brain"
+    },
+    {
+      "id": "statistics",
+      "name": "Statistics",
+      "blurb": "Distributions, uncertainty and the logic of testing.",
+      "icon": "sigma"
+    },
+    {
+      "id": "llm-internals",
+      "name": "LLM Internals",
+      "blurb": "How large language models actually work under the hood.",
+      "icon": "binary"
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "blurb": "The calculus and linear algebra underneath everything.",
+      "icon": "shapes"
+    }
+  ]
+}
