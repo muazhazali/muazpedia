@@ -25,7 +25,7 @@ export function ConceptCard({ title, href, completed, started, difficulty, showD
         ) : (
           <span
             className={cn(
-              'bg-accent text-accent-foreground flex size-7 shrink-0 items-center justify-center rounded-full font-mono text-[11px] font-semibold',
+              'bg-accent text-accent-foreground flex size-7 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold',
               !available && 'bg-muted text-muted-foreground/60',
             )}
           >

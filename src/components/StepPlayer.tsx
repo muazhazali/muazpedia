@@ -52,7 +52,7 @@ export function StepPlayer({
     <div className="p-4 sm:p-5" onKeyDown={handleKeyDown}>
       {/* step header */}
       <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-        <p className="text-primary font-mono text-[11px] font-medium tracking-widest uppercase">
+        <p className="text-primary text-[11px] font-medium tracking-widest uppercase">
           Step {stepIndex + 1} of {stepCount} · {title}
         </p>
         <div className="text-muted-foreground hidden text-[11px] sm:block">

@@ -20,7 +20,7 @@ More concepts (gradient descent, distributions, quantization…) are planned —
 - Tailwind CSS v4 + shadcn/ui-style components
 - [Motion](https://motion.dev/docs/react) for animation
 - KaTeX for formulas · MDX for lesson content
-- IBM Plex Sans + JetBrains Mono (tabular figures everywhere)
+- Inter + JetBrains Mono for numbers and code (tabular figures everywhere)
 - WCAG-AA-checked theming: light/dark/system modes, accent presets and a fully custom accent that is auto-clamped to keep 4.5:1 contrast
 - localStorage for progress (theme, quiz scores, flashcard ratings)
 

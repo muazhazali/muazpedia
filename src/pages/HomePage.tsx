@@ -28,7 +28,7 @@ export function HomePage() {
     <main className="mx-auto max-w-6xl px-4 pt-10 pb-24 sm:px-6">
       {/* hero */}
       <section className="max-w-2xl">
-        <p className="text-primary font-mono text-[11px] font-medium tracking-widest uppercase">
+        <p className="text-primary text-[11px] font-medium tracking-widest uppercase">
           Muazpedia
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -46,7 +46,7 @@ export function HomePage() {
       {/* continue learning */}
       {attention && (
         <section className="mt-10" aria-labelledby="continue-heading">
-          <h2 id="continue-heading" className="text-primary mb-3 font-mono text-[11px] font-medium tracking-widest uppercase">
+          <h2 id="continue-heading" className="text-primary mb-3 text-[11px] font-medium tracking-widest uppercase">
             Continue learning
           </h2>
           <Link to={`/lesson/${attention.slug}`} className="block" aria-label={`Open lesson: ${attention.title}`}>
@@ -97,7 +97,7 @@ export function HomePage() {
           <h2 id="explore-heading" className="text-xl font-semibold tracking-tight">
             Explore concepts
           </h2>
-          <span className="text-muted-foreground font-mono text-xs">
+          <span className="text-muted-foreground text-xs tabular-nums">
             {TOPICS.reduce((n, t) => n + conceptsForTopic(t.id).length, 0)} planned in total
           </span>
         </div>
@@ -108,7 +108,7 @@ export function HomePage() {
               <section key={t.id} aria-label={`${t.name} concepts`}>
                 <div className="mb-3 flex items-center justify-between">
                   <h3 className="text-sm font-semibold">{t.name}</h3>
-                  <span className="text-muted-foreground font-mono text-[11px] tabular-nums">
+                  <span className="text-muted-foreground text-[11px] tabular-nums">
                     {concepts.length} concepts
                   </span>
                 </div>
@@ -144,13 +144,13 @@ export function HomePage() {
       <section className="mt-14" aria-labelledby="method-heading">
         <h2 id="method-heading" className="sr-only">How every lesson works</h2>
         <Card className="bg-muted/40 p-6 sm:p-8">
-          <p className="text-primary font-mono text-[11px] font-medium tracking-widest uppercase">
+          <p className="text-primary text-[11px] font-medium tracking-widest uppercase">
             The learning loop
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {LOOP_STEPS.map(([step, text]) => (
               <div key={step} className="flex items-start gap-3">
-                <span className="text-primary bg-accent font-mono text-xs font-semibold">{step}</span>
+                <span className="text-primary bg-accent text-xs font-semibold">{step}</span>
                 <p className="text-sm leading-relaxed">{text}</p>
               </div>
             ))}

@@ -14,7 +14,7 @@ export function LessonLayout({ lesson, children }: LessonLayoutProps) {
 
   return (
     <article className="mx-auto w-full max-w-[56rem] px-4 pt-8 pb-24 sm:px-6">
-      <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 font-mono text-[11px] tracking-wide uppercase">
+      <nav aria-label="Breadcrumb" className="text-muted-foreground mb-6 flex items-center gap-1.5 text-xs tracking-wide uppercase">
         <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
           Library
         </Link>

@@ -57,7 +57,7 @@ export function Flashcard({ cardId, front, back, rating, onRated, compact = fals
             {rating && (
               <span
                 className={cn(
-                  'rounded-full px-2 py-0.5 font-mono text-[10px]',
+                  'rounded-full px-2 py-0.5 text-[10px] font-medium',
                   rating.rating === 'known' ? 'bg-success/10 text-success' : 'bg-muted text-muted-foreground',
                 )}
               >

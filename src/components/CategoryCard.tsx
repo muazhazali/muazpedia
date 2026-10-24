@@ -28,7 +28,7 @@ export function CategoryCard({ id, name, blurb, icon, conceptCount, hasLesson }:
           <span className="bg-accent text-accent-foreground group-hover:bg-primary/15 group-hover:text-primary flex size-9 items-center justify-center rounded-lg transition-colors">
             <IconByName name={icon} className="size-4.5" />
           </span>
-          <span className="text-muted-foreground font-mono text-[11px] tabular-nums">
+          <span className="text-muted-foreground text-[11px] tabular-nums">
             {conceptCount} {conceptCount === 1 ? 'concept' : 'concepts'}
           </span>
         </div>

@@ -145,7 +145,7 @@ export function ReviewPage() {
             <Card key={lesson.slug} className="flex items-center justify-between gap-4 p-5">
               <div>
                 <p className="text-sm font-medium">{lesson.title}</p>
-                <p className="text-muted-foreground mt-0.5 font-mono text-xs">
+                <p className="text-muted-foreground mt-0.5 text-xs tabular-nums">
                   {lesson.quizCount} questions · instant feedback
                 </p>
               </div>

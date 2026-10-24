@@ -70,7 +70,7 @@ export function Quiz({ lessonId, questions, title = 'Check yourself' }: QuizProp
   return (
     <Card className="p-5 sm:p-6">
       <div className="mb-4 flex items-center justify-between gap-2">
-        <p className="text-primary font-mono text-[11px] font-medium tracking-widest uppercase">
+        <p className="text-primary text-[11px] font-medium tracking-widest uppercase">
           {title}
         </p>
         <span className="text-muted-foreground font-mono text-[11px] tabular-nums">
